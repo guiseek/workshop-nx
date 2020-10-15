@@ -74,6 +74,9 @@
     },
     "static-shared-seatmap-data-access": {
       "tags": []
+    },
+    "core-entities": {
+      "tags": []
     }
   },
   "workspaceLayout": {

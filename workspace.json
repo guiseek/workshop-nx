@@ -785,10 +785,41 @@
         }
       },
       "schematics": {}
+    },
+    "core-entities": {
+      "root": "components/core/entities",
+      "sourceRoot": "components/core/entities/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["components/core/entities/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "components/core/entities/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/components/core/entities",
+            "tsConfig": "components/core/entities/tsconfig.lib.json",
+            "packageJson": "components/core/entities/package.json",
+            "main": "components/core/entities/src/index.ts",
+            "assets": ["components/core/entities/*.md"]
+          }
+        }
+      }
     }
   },
   "cli": {
-    "defaultCollection": "@nrwl/nest"
+    "defaultCollection": "@nrwl/angular"
   },
   "defaultProject": "cloud-api",
   "schematics": {

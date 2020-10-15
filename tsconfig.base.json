@@ -36,7 +36,8 @@
       ],
       "@workshop-nx/static/shared/seatmap/data-access": [
         "components/static/shared/seatmap/data-access/src/index.ts"
-      ]
+      ],
+      "@workshop/core/entities": ["components/core/entities/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
