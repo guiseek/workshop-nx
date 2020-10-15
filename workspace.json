@@ -1,7 +1,59 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "cloud-api": {
+      "root": "containers/cloud/api",
+      "sourceRoot": "containers/cloud/api/src",
+      "projectType": "application",
+      "prefix": "cloud-api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/containers/cloud/api",
+            "main": "containers/cloud/api/src/main.ts",
+            "tsConfig": "containers/cloud/api/tsconfig.app.json",
+            "assets": ["containers/cloud/api/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "containers/cloud/api/src/environments/environment.ts",
+                  "with": "containers/cloud/api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "cloud-api:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["containers/cloud/api/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "containers/cloud/api/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
-  }
+    "defaultCollection": "@nrwl/nest"
+  },
+  "defaultProject": "cloud-api"
 }

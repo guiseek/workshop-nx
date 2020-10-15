@@ -22,7 +22,11 @@
       }
     }
   },
-  "projects": {},
+  "projects": {
+    "cloud-api": {
+      "tags": []
+    }
+  },
   "workspaceLayout": {
     "appsDir": "containers",
     "libsDir": "components"
