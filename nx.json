@@ -25,6 +25,55 @@
   "projects": {
     "cloud-api": {
       "tags": []
+    },
+    "static-booking-desktop": {
+      "tags": []
+    },
+    "static/booking-desktop-e2e": {
+      "tags": [],
+      "implicitDependencies": ["static-booking-desktop"]
+    },
+    "static-booking-mobile": {
+      "tags": []
+    },
+    "static/booking-mobile-e2e": {
+      "tags": [],
+      "implicitDependencies": ["static-booking-mobile"]
+    },
+    "static-booking-feature-shell": {
+      "tags": []
+    },
+    "static-booking-data-access": {
+      "tags": []
+    },
+    "static-check-in-desktop": {
+      "tags": []
+    },
+    "static/check-in-desktop-e2e": {
+      "tags": [],
+      "implicitDependencies": ["static-check-in-desktop"]
+    },
+    "static-check-in-mobile": {
+      "tags": []
+    },
+    "static/check-in-mobile-e2e": {
+      "tags": [],
+      "implicitDependencies": ["static-check-in-mobile"]
+    },
+    "static-check-in-feature-shell": {
+      "tags": []
+    },
+    "static-check-in-data-access": {
+      "tags": []
+    },
+    "static-shared-data-access": {
+      "tags": []
+    },
+    "static-shared-seatmap-feature-seatmap": {
+      "tags": []
+    },
+    "static-shared-seatmap-data-access": {
+      "tags": []
     }
   },
   "workspaceLayout": {
