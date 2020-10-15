@@ -9,6 +9,8 @@
     "test": "nx test",
     "lint": "nx workspace-lint && nx lint",
     "e2e": "nx e2e",
+    "cloud-api:test": "nx run cloud-api:test --runInBand --detectOpenHandles",
+    "cloud-api:tdd": "nx run cloud-api:test --watch --runInBand --detectOpenHandles",
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",
     "affected:build": "nx affected:build",
