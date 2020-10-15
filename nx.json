@@ -1,7 +1,7 @@
 {
   "npmScope": "workshop-nx",
   "affected": {
-    "defaultBase": "master"
+    "defaultBase": "main"
   },
   "implicitDependencies": {
     "workspace.json": "*",
@@ -24,7 +24,7 @@
   },
   "projects": {},
   "workspaceLayout": {
-    "appsDir": "packages",
-    "libsDir": "packages"
+    "appsDir": "containers",
+    "libsDir": "components"
   }
 }
