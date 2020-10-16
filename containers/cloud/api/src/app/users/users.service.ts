@@ -1,3 +1,4 @@
+import { MongoPagination } from '../database/decorators';
 import { UpdateUserDto } from './dto/update-user.dto';
 
 import { Model } from 'mongoose';
@@ -15,6 +16,12 @@ export class UsersService {
   async create(createUserDto: CreateUserDto): Promise<User> {
     const createdUser = new this.userModel(createUserDto);
     return createdUser.save();
+  }
+
+  async paged({ filter, ...pagination }: MongoPagination) {
+    const data = await this.userModel.find(pagination);
+    const total = await this.userModel.count(filter);
+    return { total, data };
   }
 
   async findAll(): Promise<User[]> {

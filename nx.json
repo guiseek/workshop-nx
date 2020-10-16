@@ -77,6 +77,12 @@
     },
     "core-entities": {
       "tags": []
+    },
+    "static-shared-customer-data-access": {
+      "tags": []
+    },
+    "static-shared-customer-feature-manage": {
+      "tags": []
     }
   },
   "workspaceLayout": {

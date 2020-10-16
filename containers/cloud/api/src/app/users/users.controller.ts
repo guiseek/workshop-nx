@@ -1,3 +1,4 @@
+import { MongoPagination, MongoPaginationParamDecorator } from '../database/decorators';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { UsersService } from './users.service';
@@ -18,6 +19,11 @@ export class UsersController {
   @Get()
   findAll() {
     return this.users.findAll();
+  }
+
+  @Get('data')
+  findPaged(@MongoPaginationParamDecorator() pagination: MongoPagination) {
+    return this.users.paged(pagination)
   }
 
   @Post()

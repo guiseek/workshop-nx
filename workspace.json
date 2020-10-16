@@ -112,7 +112,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "static-booking-desktop:build"
+            "browserTarget": "static-booking-desktop:build",
+            "proxyConfig": "containers/static/booking/desktop/src/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -814,6 +815,68 @@
             "main": "components/core/entities/src/index.ts",
             "assets": ["components/core/entities/*.md"]
           }
+        }
+      }
+    },
+    "static-shared-customer-data-access": {
+      "projectType": "library",
+      "root": "components/static/shared/customer/data-access",
+      "sourceRoot": "components/static/shared/customer/data-access/src",
+      "prefix": "workshop-nx",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "components/static/shared/customer/data-access/tsconfig.lib.json",
+              "components/static/shared/customer/data-access/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!components/static/shared/customer/data-access/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "components/static/shared/customer/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "static-shared-customer-feature-manage": {
+      "projectType": "library",
+      "root": "components/static/shared/customer/feature-manage",
+      "sourceRoot": "components/static/shared/customer/feature-manage/src",
+      "prefix": "customer",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "components/static/shared/customer/feature-manage/tsconfig.lib.json",
+              "components/static/shared/customer/feature-manage/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!components/static/shared/customer/feature-manage/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "components/static/shared/customer/feature-manage/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
         }
       }
     }

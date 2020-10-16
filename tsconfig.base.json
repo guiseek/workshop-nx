@@ -37,7 +37,13 @@
       "@workshop-nx/static/shared/seatmap/data-access": [
         "components/static/shared/seatmap/data-access/src/index.ts"
       ],
-      "@workshop/core/entities": ["components/core/entities/src/index.ts"]
+      "@workshop-nx/core/entities": ["components/core/entities/src/index.ts"],
+      "@workshop-nx/static/shared/customer/data-access": [
+        "components/static/shared/customer/data-access/src/index.ts"
+      ],
+      "@workshop-nx/static/shared/customer/feature-manage": [
+        "components/static/shared/customer/feature-manage/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

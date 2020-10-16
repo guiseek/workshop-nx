@@ -13,5 +13,8 @@ module.exports = {
     '<rootDir>/components/static/shared/seatmap/feature-seatmap',
     '<rootDir>/components/static/shared/seatmap/data-access',
     '<rootDir>/components/core/entities',
+    '<rootDir>/components/static/shared/customer/data-access',
+    '<rootDir>/components/static/shared/customer/feature-seatmap',
+    '<rootDir>/components/static/shared/customer/feature-manage',
   ],
 };
