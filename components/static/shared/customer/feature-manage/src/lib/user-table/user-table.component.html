@@ -1,0 +1,54 @@
+<mat-progress-bar
+  mode="indeterminate"
+  *ngIf="isLoadingResults"
+></mat-progress-bar>
+
+<mat-table
+  [dataSource]="data"
+  class="example-table mat-elevation-z4"
+  matSort
+  matSortActive="created"
+  matSortDisableClear
+  matSortDirection="desc"
+>
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{ row._id }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Nome</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{ row.name }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="age">
+    <mat-header-cell *matHeaderCellDef>Idade</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{ row.age }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <button
+        type="button"
+        mat-icon-button
+        (click)="selectedChange.emit({ data: row, action: 'update' })"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button
+        type="button"
+        mat-icon-button
+        (click)="selectedChange.emit({ data: row, action: 'delete' })"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
+
+<!-- <mat-paginator [length]="resultsLength" [pageSize]="30"></mat-paginator> -->

@@ -1,5 +1,6 @@
 module.exports = {
   displayName: 'cloud-api',
+  testEnvironment: 'node',
   preset: '../../../jest.preset.js',
   globals: {
     'ts-jest': {

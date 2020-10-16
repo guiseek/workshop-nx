@@ -15,7 +15,36 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@workshop-nx/static/booking/feature-shell": [
+        "components/static/booking/feature-shell/src/index.ts"
+      ],
+      "@workshop-nx/static/booking/data-access": [
+        "components/static/booking/data-access/src/index.ts"
+      ],
+      "@workshop-nx/static/check-in/feature-shell": [
+        "components/static/check-in/feature-shell/src/index.ts"
+      ],
+      "@workshop-nx/static/check-in/data-access": [
+        "components/static/check-in/data-access/src/index.ts"
+      ],
+      "@workshop-nx/static/shared/data-access": [
+        "components/static/shared/data-access/src/index.ts"
+      ],
+      "@workshop-nx/static/shared/seatmap/feature-seatmap": [
+        "components/static/shared/seatmap/feature-seatmap/src/index.ts"
+      ],
+      "@workshop-nx/static/shared/seatmap/data-access": [
+        "components/static/shared/seatmap/data-access/src/index.ts"
+      ],
+      "@workshop-nx/core/entities": ["components/core/entities/src/index.ts"],
+      "@workshop-nx/static/shared/customer/data-access": [
+        "components/static/shared/customer/data-access/src/index.ts"
+      ],
+      "@workshop-nx/static/shared/customer/feature-manage": [
+        "components/static/shared/customer/feature-manage/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

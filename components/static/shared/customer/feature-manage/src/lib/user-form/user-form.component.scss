@@ -1,0 +1,12 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  form {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      flex: 1;
+    }
+  }
+}
